@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Son-zw-VtR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flower Recognition-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Intermediate_Core_ML" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wL-7e-g6O">
+                                <rect key="frame" x="0.0" y="584" width="375" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="JOW-HD-0pn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPy-Tx-qqd">
+                                <rect key="frame" x="0.0" y="72" width="375" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iPy-Tx-qqd" firstAttribute="leading" secondItem="1wL-7e-g6O" secondAttribute="leading" id="3u2-sc-1Ef"/>
+                            <constraint firstItem="1wL-7e-g6O" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="HiL-wh-jwT"/>
+                            <constraint firstItem="1wL-7e-g6O" firstAttribute="top" secondItem="iPy-Tx-qqd" secondAttribute="bottom" constant="8" symbolic="YES" id="Iik-EK-CY0"/>
+                            <constraint firstItem="iPy-Tx-qqd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Wvz-y7-6kD"/>
+                            <constraint firstItem="iPy-Tx-qqd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="adB-TC-KFq"/>
+                            <constraint firstItem="iPy-Tx-qqd" firstAttribute="trailing" secondItem="1wL-7e-g6O" secondAttribute="trailing" id="kE9-Cd-hlp"/>
+                            <constraint firstAttribute="trailing" secondItem="iPy-Tx-qqd" secondAttribute="trailing" id="xq3-hq-M62"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Flower Recognition" largeTitleDisplayMode="always" id="d5d-ef-Zt5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="VWC-J3-zZS">
+                            <connections>
+                                <action selector="camera:" destination="BYZ-38-t0r" id="woc-Ne-5qW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="t8B-9o-NYy">
+                            <connections>
+                                <action selector="openLibrary:" destination="BYZ-38-t0r" id="JsA-Pr-sjO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="classifier" destination="1wL-7e-g6O" id="MxJ-me-tKI"/>
+                        <outlet property="imageView" destination="iPy-Tx-qqd" id="5p8-Xz-DjR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x6e-N2-rtC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Son-zw-VtR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PjK-65-jfN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ALE-J9-GV8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ug-zR-QQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="139"/>
+        </scene>
+    </scenes>
+</document>
